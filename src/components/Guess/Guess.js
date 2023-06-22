@@ -6,9 +6,9 @@ function Guess({ guess }) {
   return (
     <p className="guess">
       {guess
-        ? [...guess].map((char, idx) => (
-            <span key={idx} className="cell">
-              {char}
+        ? guess.map((part, idx) => (
+            <span key={idx} className={`cell ${part.status}`}>
+              {part.letter}
             </span>
           ))
         : range(WORD_LENGTH).map((idx) => <span key={idx} className="cell" />)}
